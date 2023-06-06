@@ -1,0 +1,99 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    <img
+    width="70"
+    alt="Facture Logo"
+    src="https://s3.eu-central-1.amazonaws.com/startizy/uploads/startizy/legal_contract/small_image/4/679974.svg">
+    <span >Telephone Bill </span>
+    <div class="spacer"></div>
+    <button class="button1">log out </button>
+
+</div>
+<!-- Leftside bar -->
+      <div id="tm-sidebar" class="tm-sidebar"> 
+        <nav class="tm-nav">
+            <div>
+                <ul id="tm-main-nav">
+                    <li class="nav-item">                                
+                        <a  class="nav-link " routerLink="/Customers">
+                            <div class="triangle-right"></div>
+                          <!--  <form #f="ngForm" (ngSubmit)="onSearch(f.value)" >
+                                  
+                            </form>-->Customers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a  class="nav-link"   routerLink="/Contracts" >
+                            <div class="triangle-right"></div>
+                            Contracts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLink="/Services">
+                            <div class="triangle-right"></div>
+                            Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link current"  routerLink="/Offers">
+                            <div class="triangle-right"></div>
+                            Offers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link" routerLink="/Bills">
+                          <div class="triangle-right"></div>
+                          Bills 
+                      </a>
+                  </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>            <!-- offers section -->
+            <div  id="offerspage">
+                <!-- main box -->
+                <section id="Offers" class="tm-section">
+                    <table class="container" >
+                        <thead>
+                          <tr>
+                            <th><h1>Offre id</h1></th>
+                            <th><h1>Offre parent</h1></th>
+                            <th><h1>Service id</h1></th>
+    
+                            <th><h1>Details</h1></th>
+                
+                
+                          </tr>
+                        </thead>
+                        <tbody>
+                         <tr *ngFor ="let item of listofoffers">
+
+                            <td   >{{item.offre_id}}</td>
+                            <td>{{item.offre_parent}}</td>
+                            <td>{{item.service_id}}</td>
+
+                            <td>
+                
+                                <button type="submit" class="button" (click) ="detail(item.offre_id)"  > click  </button>
+                
+                            </td>             
+                          </tr>  
+                    
+                        </tbody>
+                      </table>
+                   </section>
+                   <!-- Rightside box -->
+                   <aside id="rightCol6" class="rightCol" >
+                    <div id="pagetext-container"  *ngIf ="offersdetails">
+                      <span class="left">Offre id  : <br></span>
+                      <span class="right">{{offersdetails.offre_id}} <br></span>
+                      <span class="left">Offre parent : <br></span>
+                      <span class="right">{{offersdetails.offre_parent}} <br></span>
+                      <span class="left">Service id : <br></span>
+                      <span class="right">{{offersdetails.service_id}}<br></span>
+    
+                      
+                   </div>
+                    </aside>
+            </div>

@@ -1,0 +1,287 @@
+/* You can add global styles to this file, and also import other style files */
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+
+
+html, body{
+    height: 100%;
+    font-weight: 300;
+    line-height: 1.42em;
+    margin : 0 ;
+    border: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-image: url("bg.png");
+    background-position: center ;
+    background-repeat: repeat;
+    background-size: cover;
+    box-sizing: border-box;
+}
+.spacer {
+  flex: 1;
+}
+
+/*Tool bar */
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+	z-index: 1000;
+  font-size: 1.5em;
+  }
+
+  .toolbar img {
+    margin: 40px 16px 0 5px;
+  }
+
+  .button1 {
+    
+    color: black; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 8px 30px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #1976d2;
+    border: #008CBA;
+    }
+    
+    .button1:hover {
+
+      background-color: #1976d2;
+      color: white;
+    }
+/* Sidebar */
+
+
+
+
+/* Container */
+
+.tm-section {
+	margin-top: 100px;
+	margin-left: 150px;
+	width: 900px;
+	height: 400px;
+	padding: 1500px 1500px;
+	box-sizing: inherit;
+	padding: 20px;
+    display: grid;
+	grid-gap: 20px;
+
+    justify-content: space-between;
+	box-sizing: inherit;
+	
+}
+        /* Tableau  */
+        .container th h1 {
+            font-weight: bold;
+            font-size: 1.3em;
+          text-align: center;
+          color: black;
+          ;
+        }
+
+        .container td {
+            font-weight: normal;
+            font-size: 1em;
+          -webkit-box-shadow: 0 3px 3px -3px #0E1119;
+            -moz-box-shadow: 0 3px 3px -3px #0E1119;
+                  box-shadow: 0 3px 3px -3px #0E1119;
+        }
+
+        .container {
+            text-align: left;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+          display: table;
+          padding: 0 0 2em 1em;
+
+          display: block;
+          padding: 5px;
+          margin-top: -75px;
+          max-width: 1000px ;
+          max-height: 500px;
+          overflow-y: scroll;
+
+        }
+
+                /* width */        
+                ::-webkit-scrollbar {
+                    width: 0px;
+                }
+          
+                /* Track */
+                ::-webkit-scrollbar-track {
+                    background: transparent ;
+                }
+          
+                /* Handle */
+                ::-webkit-scrollbar-thumb {
+                    background: #888;
+                }
+          
+                /* Handle on hover */
+                ::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+
+
+        .container td, .container th {
+            padding-bottom: 4%;
+            padding-top: 4%;
+          padding-left:1%;  
+          text-align: left;
+          padding: 5px;
+
+
+
+
+
+
+        }
+
+        /* Background-color of the odd rows */
+        .container tr:nth-child(odd) {
+            background-color: rgb(77, 77, 77) ;
+            color: white;
+        }
+
+        /* Background-color of the even rows */
+        .container tr:nth-child(even) {
+            background-color: grey;
+            color:#0E1119 ;
+        }
+
+        .container th {
+            background-color: rgb(247, 111, 220);
+            color: white;
+        }
+
+
+        .container tr:hover {
+          background-color: #464a5231;
+        -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+            -moz-box-shadow: 0 6px 6px -6px #0E1119;
+                  box-shadow: 0 6px 6px -6px #0E1119;
+                  color: black;
+        }
+
+        .container td:hover {
+          background-color: violet ;
+          color: #403E10;
+          font-weight: bold;
+          
+          box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+          transform: translate3d(6px, -6px, 0);
+          
+          transition-delay: 0s;
+            transition-duration: 0.4s;
+            transition-property: all;
+          transition-timing-function: line;
+        }
+
+        @media (max-width: 800px) {
+        .container td:nth-child(4),
+        .container th:nth-child(4) { display: none; }
+        }
+
+
+
+
+
+
+
+/* right box */ 
+
+
+.rightCol{
+
+	margin-top: -450px;
+	margin-left: 1100px;
+	margin-right: 100px ;
+	height: 600px;
+	width: 400px;
+	border-bottom: 1px solid transparent;
+    padding-bottom: 30px;
+    font-size: 1.3em;
+    border-radius: 10px;
+	list-style: none;
+	background-color: rgba(255, 255, 255, 0.423);
+	font-size: 1em;
+    padding: 50px;
+  
+
+}
+
+
+.button {
+	color: black; 
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 8px 30px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white; 
+	}
+  
+  .button:hover {
+	  background-color: #008CBA;
+	  color: white;
+	}
+  
+	
+*{
+	box-sizing: inherit;	
+}
+.left {
+  font-size: 40px;
+  color: rgb(218, 43, 43);
+  text-align: center;
+  line-height: 1.5em;
+
+}
+
+.right {
+  font-size: 30px;
+  color: #0E1119;
+  text-align: center;
+}
+
+	/* footer   */
+	   #footer {
+	position:fixed;
+    left: 0;
+    right: 0;
+	bottom: 0;
+    height: 30px;
+    align-items: center;
+	text-align: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+	z-index: 500;
+  }
+

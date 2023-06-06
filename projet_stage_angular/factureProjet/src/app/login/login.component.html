@@ -1,0 +1,33 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    <img
+    width="70"
+    alt="Facture Logo"
+    src="https://s3.eu-central-1.amazonaws.com/startizy/uploads/startizy/legal_contract/small_image/4/679974.svg">
+    <span >Telephone Bill </span>
+    <div class="spacer"></div>
+</div>
+
+<div class="Login" >
+    <h1>Welcome</h1>
+    <form #f="ngForm" novalidate>
+    <input  name="first" ngModel  #first="ngModel" type="text" required placeholder="User Name">
+    <div *ngIf="notcorrect1"> 
+       <p>User Name incorrect </p> 
+    </div> 
+
+    <input name="last" ngModel type="password" required  placeholder="Password"> 
+    <div *ngIf="notcorrect2" > 
+        <p>Password incorrect</p>
+    </div>    
+
+    <button  type="submit" class="button" (click) ="verify(f)" >Login</button>
+
+</form>
+
+
+
+</div>
+<footer id="footer">
+    copyright-2022
+</footer>

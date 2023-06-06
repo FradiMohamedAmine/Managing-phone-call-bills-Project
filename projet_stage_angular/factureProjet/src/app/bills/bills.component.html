@@ -1,0 +1,150 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+  width="70"
+  alt="Facture Logo"
+  src="https://s3.eu-central-1.amazonaws.com/startizy/uploads/startizy/legal_contract/small_image/4/679974.svg">
+  <span >Telephone Bill </span>
+  <div class="spacer"></div>
+  <button class="button1">Log out </button>
+
+</div>
+<!-- Leftside bar -->
+      <div id="tm-sidebar" class="tm-sidebar"> 
+        <nav class="tm-nav">
+            <div>
+                <ul id="tm-main-nav">
+                    <li class="nav-item">                                
+                        <a  class="nav-link" routerLink="/Customers">
+                            <div class="triangle-right"></div>
+                          <!--  <form #f="ngForm" (ngSubmit)="onSearch(f.value)" >
+                                  
+                            </form>-->Customers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a  class="nav-link"   routerLink="/Contracts" >
+                            <div class="triangle-right"></div>
+                            Contracts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLink="/Services">
+                            <div class="triangle-right"></div>
+                            Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLink="/Offers">
+                            <div class="triangle-right"></div>
+                            Offers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link current" routerLink="/Bills">
+                          <div class="triangle-right"></div>
+                          Bills 
+                      </a>
+                  </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>    <!-- Bills section -->
+    <div id="Billspage" class="Billspage">
+    <!-- main box --> 
+        
+    <section id="bills" class="tm-section">
+            <table class="container" >
+                <thead>
+                  <tr>
+                    <th><h1>Id</h1></th>
+                    <th><h1>Customer id</h1></th>
+                    <th><h1>consumption call</h1></th>
+                    <th><h1>consumption SMS</h1></th>
+                    <th><h1>consumption Internet</h1></th>
+                    <th><h1>payment</h1></th>
+                    <th><h1>total sum</h1></th>
+                    <th><h1>Details</h1></th>
+        
+        
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr    *ngFor ="let item of listofbills" >
+                    <td>{{item.facture_id}} </td>
+                    <td>{{item.client_id}} </td>
+                    <td>{{item.consom_appel}} </td>
+                    <td>{{item.consom_sms}}</td>
+                    <td>{{item.consom_internet}}</td>
+                    <td>{{item.paid}}</td>
+                    <td>{{item.somme_tot}}</td>
+
+                    <td>
+                        <button type="submit" class="button" (click) ="detail(item.facture_id,item.client_id)"  > click  </button>
+                    </td>
+                  </tr>
+            
+                </tbody>
+              </table>
+
+
+    </section>
+
+    <!-- Rightside box -->
+       <aside  id="rightCol0" class="rightCol" *ngIf="customer_detail"  >
+            <div id="facture_info"    >
+              Telephone Service<br>
+              123 Khzema Street <br>
+              Souuse 
+            <h1> Telephone bill <br> </h1>  
+            <b> Customer Family  Name : </b>
+            {{customer_detail.prenom}} <br>
+            <b> Customer Last Name : </b>
+            {{customer_detail.nom}} <br>
+  
+            </div>
+
+
+            <!--bill Table-->
+            <table  id="bill_table"   *ngIf ="billdetails">
+            <li>
+            <tr >
+                <th> Ref </th>
+                <th>sum</th>
+                <th>paid</th>
+            </tr>
+            <tr  >
+                <td> 0000{{billdetails.facture_id}} </td>
+                <td>
+   
+                  <div *ngIf="notcalculated; else elseBlock"> 
+                    <button type="submit" class="button" (click) ="Calculate(billdetails.facture_id)"  onClick="window.location.reload();" >
+                      Calculate
+
+                    </button>  
+  
+
+                  </div>
+                  <ng-template #elseBlock>{{billdetails.somme_tot}} </ng-template>   
+                
+                
+                </td>
+                <td>
+                  <div *ngIf="notpaid; else elseBlock2"> 
+                    <button type="submit" class="button" (click) ="pay(billdetails.facture_id)"  onClick="window.location.reload();" >
+                      pay
+                    </button>  
+  
+
+                  </div>
+                  <ng-template #elseBlock2>Yes </ng-template>
+                
+                </td>
+            </tr>
+            </li>
+            </table> 
+       </aside>
+
+
+    </div>
